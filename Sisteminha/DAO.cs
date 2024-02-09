@@ -38,13 +38,16 @@ namespace Sisteminha
             dados = "('" + codigo + "','" + nome + "','" + telefone + "','" + cidade + "','" + estado + "')";
             sql = "insert into pessoa(codigo,nome,telefone,cidade,estado) values" + dados;
 
-            MySqlCommand conn = new MySqlCommand(sql,conexao);
-            MessageBox.Show("1 Dado inserido" + conn.ExecuteNonQuery());
+            try
+            {
+                MySqlCommand conn = new MySqlCommand(sql, conexao);
+                MessageBox.Show(conn.ExecuteNonQuery() + " Dado Inserido!");
+            }catch(Exception erro)
+            {
+                MessageBox.Show("Algo deu errado!\n\n" + erro);
+            }
+            
         }//fim do metodo
-
-
-
-
 
     }//fim da classe
 }//fim do projeto

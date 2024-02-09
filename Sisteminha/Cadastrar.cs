@@ -58,6 +58,13 @@ namespace Sisteminha
             string est = estado.Text;
 
             bd.Inserir(cod,name,tel,cid,est);//inserindo no BD
+
+            //limpar os campos apos a inserçao dos dados
+            codigo.Text = "";
+            nome.Text = "";
+            telefone.Text = "";
+            cidade.Text = "";
+            estado.Text = "";
         }//fim do botao cadastrar
 
         private void voltarCadastro_Click(object sender, EventArgs e)
